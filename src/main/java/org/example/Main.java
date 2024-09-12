@@ -45,7 +45,7 @@ public class Main {
     public static class Pareja<T, U> {
         private final T primero;
         private final U segundo;
-        
+
         public Pareja(T primero, U segundo) {
             this.primero = primero;
             this.segundo = segundo;
@@ -77,5 +77,27 @@ public class Main {
             return "(" + primero + ", " + segundo + ")";
         }
     }
+
+
+    public static void main(String[] args) {
+        Set<Integer> conjunto1 = new HashSet<>();
+        Set<Integer> conjunto2 = new HashSet<>();
+
+        // Añadir algunos números de prueba a los conjuntos
+        conjunto1.add(1);
+        conjunto1.add(2);
+        conjunto1.add(3);
+        conjunto2.add(2);
+        conjunto2.add(3);
+        conjunto2.add(4);
+
+        // Mostrar los resultados de las operaciones
+        System.out.println("Unión: " + unir(conjunto1, conjunto2));
+        System.out.println("Intersección: " + intersectar(conjunto1, conjunto2));
+        System.out.println("Diferencia: " + diferenciar(conjunto1, conjunto2));
+        System.out.println("Es subconjunto: " + esSubconjunto(conjunto1, conjunto2));
+        System.out.println("Cartesiano: " + cartesiano(conjunto1, conjunto2));
+    }
+
 
 }
