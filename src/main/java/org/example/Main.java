@@ -25,9 +25,20 @@ public class Main {
         return resultado;
     }
 
-    // Método para verificar si un conjunto es subconjunto de otro
+
     public static boolean esSubconjunto(Set<Integer> conjunto1, Set<Integer> conjunto2) {
         return conjunto1.containsAll(conjunto2); // Verificar si 'conjunto1' contiene todos los elementos de 'conjunto2'
+    }
+
+
+    public static Set<Pareja<Integer, Integer>> cartesiano(Set<Integer> conjunto1, Set<Integer> conjunto2) {
+        Set<Pareja<Integer, Integer>> resultado = new HashSet<>();
+        for (Integer elemento1 : conjunto1) {
+            for (Integer elemento2 : conjunto2) {
+                resultado.add(new Pareja<>(elemento1, elemento2));
+            }
+        }
+        return resultado; 
     }
 
 
