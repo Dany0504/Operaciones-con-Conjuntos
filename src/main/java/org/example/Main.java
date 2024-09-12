@@ -38,9 +38,44 @@ public class Main {
                 resultado.add(new Pareja<>(elemento1, elemento2));
             }
         }
-        return resultado; 
+        return resultado;
     }
 
 
+    public static class Pareja<T, U> {
+        private final T primero;
+        private final U segundo;
+        
+        public Pareja(T primero, U segundo) {
+            this.primero = primero;
+            this.segundo = segundo;
+        }
+
+        public T getPrimero() {
+            return primero;
+        }
+
+        public U getSegundo() {
+            return segundo;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Pareja<?, ?> pareja = (Pareja<?, ?>) o;
+            return primero.equals(pareja.primero) && segundo.equals(pareja.segundo);
+        }
+
+        @Override
+        public int hashCode() {
+            return 31 * primero.hashCode() + segundo.hashCode();
+        }
+
+        @Override
+        public String toString() {
+            return "(" + primero + ", " + segundo + ")";
+        }
+    }
 
 }
