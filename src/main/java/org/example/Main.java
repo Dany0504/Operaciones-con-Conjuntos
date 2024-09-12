@@ -19,4 +19,12 @@ public class Main {
     }
 
 
+    public static Set<Integer> diferenciar(Set<Integer> conjunto1, Set<Integer> conjunto2) {
+        Set<Integer> resultado = new HashSet<>(conjunto1); 
+        resultado.removeAll(conjunto2);
+        return resultado;
+    }
+
+
+
 }
