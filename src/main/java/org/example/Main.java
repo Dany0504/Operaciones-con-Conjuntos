@@ -11,6 +11,12 @@ public class Main {
         return resultado;
 
     }
-    
+
+    public static Set<Integer> intersectar(Set<Integer> conjunto1, Set<Integer> conjunto2) {
+        Set<Integer> resultado = new HashSet<>(conjunto1);
+        resultado.retainAll(conjunto2);
+        return resultado;
+    }
+
 
 }
